@@ -42,7 +42,7 @@ npm run test:extension
 npm run build
 ```
 
-On Linux, use `npx playwright install --with-deps chromium`. To test against installed Chrome, set `CHROME_PATH` to its executable. The installed-extension smoke test uses a disposable profile and Chrome's `Extensions.loadUnpacked` debugging command; it never modifies your everyday browser profile. The behavior suite uses a Chrome API stub and opens shadow roots for test inspection. The installed-extension suite has no such stubs.
+On Linux, use `npx playwright install --with-deps chromium`. To test against installed Chrome, set `CHROME_PATH` to its executable. Otherwise the installed-extension suite selects full Chromium, since Playwright's default headless shell does not support extensions. The installed-extension smoke test uses a disposable profile and Chrome's `Extensions.loadUnpacked` debugging command; it never modifies your everyday browser profile. The behavior suite uses a Chrome API stub and opens shadow roots for test inspection. The installed-extension suite has no such stubs.
 
 `npm run build` creates **dist/before-you-type-0.1.0.zip**, with the manifest at the archive root, and a SHA-256 checksum. The deterministic allowlist includes only runtime files and icons. Tests verify both the package contents and reproducibility.
 

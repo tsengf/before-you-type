@@ -16,7 +16,10 @@ const root = path.join(project, 'extension');
   let browser;
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'before-you-type-test-'));
   try {
+    // Playwright's default headless shell does not support extensions.
+    // Select the full Chromium build when no explicit Chrome executable is given.
     const context = await chromium.launchPersistentContext(profile, {headless:true, executablePath:process.env.CHROME_PATH || undefined,
+      channel:process.env.CHROME_PATH ? undefined : 'chromium',
       args:['--enable-unsafe-extension-debugging'], ignoreDefaultArgs:['--disable-extensions'], viewport:{width:1280,height:800}});
     browser = context.browser();
     const cdp = await browser.newBrowserCDPSession();
