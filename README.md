@@ -6,6 +6,16 @@ BeforeYouType is a local-only Chrome extension that warns when someone focuses a
 
 This is an early release and an accidental-disclosure aid. A website may read digits before detection. Some autofill, input methods, custom editors and hostile page behavior can bypass interception. Read the [protection limits](docs/LIMITATIONS.md).
 
+## Screenshots
+
+BeforeYouType pauses entry when you focus a recognizable SSN field.
+
+![BeforeYouType warning before entry into a labeled Social Security number field](docs/store/01-field-warning.png)
+
+It also checks SSN-like typing in ordinary fields. This example uses invalid dummy data.
+
+![BeforeYouType warning after blocking the ninth digit in an ordinary reference-number field](docs/store/02-typing-warning.png)
+
 ## Install locally
 
 1. Clone this repository or download and extract its source.
