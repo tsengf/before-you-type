@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeforeYouType — local test page</title>
+<style>
+body {max-width:760px; margin:40px auto; padding:0 24px; color:#182330; background:#f6f8f7; font:17px/1.5 system-ui,sans-serif;}
+h1 {line-height:1.2;} section {padding:20px; margin:20px 0; background:white; border:1px solid #ccd8d2; border-radius:12px;}
+label {display:block; margin:12px 0;} input,textarea,[contenteditable] {box-sizing:border-box; width:100%; padding:12px; font:inherit; border:1px solid #718579; border-radius:6px;}
+fieldset input {width:26%;} code {background:#e2eae5; padding:2px 5px;} iframe {width:100%; height:140px; border:1px solid #718579;}
+</style><body>
+<h1>Try BeforeYouType safely</h1>
+<p>Use only the dummy number <code>000-00-0000</code> or <code>000000000</code>. It is intentionally invalid. This page has no submission or network code.</p>
+<p>Install the extension first, then reload this page. A warning should appear when you focus a labeled field. Cancel should keep entry blocked; Allow should let you retype in that one field until reload.</p>
+<section><h2>Labeled field</h2><label for="labelled">Social Security number</label><input id="labelled" autocomplete="off"></section>
+<section><h2>Unlabeled number</h2><label for="ordinary">Reference number</label><input id="ordinary" autocomplete="off"><p>Typing nine digits should stop before the ninth. Typing <code>000-00-</code> should stop at the second dash. Pasting the complete dummy number should be blocked.</p></section>
+<section><h2>Split field</h2><fieldset><legend>Social Security number</legend><input id="part1" aria-label="First three digits" maxlength="3"><input id="part2" aria-label="Middle two digits" maxlength="2"><input id="part3" aria-label="Last four digits" maxlength="4"></fieldset><p>Each field asks separately.</p></section>
+<section><h2>Longer text</h2><label for="notes">Notes</label><textarea id="notes"></textarea><p>Try pasting a sentence containing the dummy number.</p></section>
+<section><h2>Editable text</h2><div id="editor" role="textbox" aria-label="Message" contenteditable="true"></div></section>
+<section><h2>Embedded form</h2><iframe title="Embedded test form" srcdoc="<!doctype html><label>Social Security number <input id='embedded'></label>"></iframe></section>
+</body></html>

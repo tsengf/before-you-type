@@ -1,0 +1,26 @@
+{
+  "name": "before-you-type",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-only Chrome warnings before sharing a Social Security number.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsengf/before-you-type.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.cjs",
+    "test": "node --test tests/core.test.cjs tests/package.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:extension": "node tests/extension.cjs",
+    "build": "npm run check && python3 scripts/package.py",
+    "icons": "node scripts/icons.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "sharp": "0.35.5"
+  }
+}
