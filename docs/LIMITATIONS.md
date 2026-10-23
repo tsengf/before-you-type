@@ -9,4 +9,3 @@
 - Embedded frames require matching site access. Sandboxed/opaque-origin frames may be unsupported. The warning displays the frame hostname, which can differ from the top-level site.
 - Incognito is unprotected unless explicitly enabled in extension Details. File pages require file access. Other Chrome profiles, browsers, phones, and desktop applications need their own protection.
 - Removing/disabling the extension or restricting site access disables its protection. Reload webpages after installation, updates or re-enabling.
-
